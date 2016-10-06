@@ -1,0 +1,89 @@
+﻿/*
+    custom.css
+    COMP229 Assignment 1
+    Thiago H 300xxxxxx
+    Edward Song 300915530
+    Created on 2016-09-25
+    Summary: Custom stylesheet, applied after bootstrap
+*/
+
+/*
+    Style rules that apply to the entire site
+*/
+body {
+    /* Required for navbar-fixed-top */
+    padding-top: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-x: hidden;
+    color: #cfba6b;
+    background-color: #111111;
+}
+
+input {
+    color: #dddddd !important;
+    background-color: #444444 !important;
+}
+
+/*
+    Style rules that apply to the master page Site1.Master
+*/
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #cfba6b;
+}
+
+.navbar-brand {
+    padding-top: 5px;
+    padding-left: 25px;
+}
+
+.footer {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    padding-top: 20px;
+    text-align: center;
+    color: #aaaaaa;
+    background-color: #222222;
+}
+
+/*
+    Style rules that apply to Default.aspx
+*/
+
+.panel {
+    border: 1px solid #cfba6b;
+    background-color: #111111;
+    border-radius: 0px;
+    margin: 10px 5px;
+    padding: 10px 10px;
+}
+
+.scorebox {
+    margin: 5px;
+    border: 1px solid #cfba6b;
+    min-height: 100px;
+    text-align: center;
+}
+
+.scorebox:hover {
+    background-color: #333333;
+}
+
+.scorebox .vs {
+    padding: 40px 0px;
+}
+
+.landing-score-text {
+    padding: 20px;
+}
+
+.content-container-90 {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.landing-score-panel {
+    min-height: 450px;
+}
