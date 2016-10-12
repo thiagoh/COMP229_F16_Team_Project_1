@@ -9,83 +9,54 @@
 
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="COMP229_F16_Team_Project_1.Default" %>
 
+<%@ Import Namespace="COMP229_F16_Team_Project_1" %>
+<%@ Import Namespace="COMP229_F16_Team_Project_1.Models" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Main Container -->
-    <div class="row content content-container-90">
+    <div class="row">
 
-        <!-- Left Panel -->
-        <div class="col-xs-12 col-sm-6">
+        <% if (lastGame != null) { %>
+        <div class="col-xs-12 col-md-offset-2 col-md-4">
             <div class="panel landing-score-panel">
                 <div class="scorebox">
                     <div class="col-xs-4">
-                        <h1>5</h1>
-                        TORONTO
+                        <h1><%=lastGame.team1Score %></h1>
+                        <%=lastGame.team1.name%>
                     </div>
                     <div class="col-xs-4 vs">VS</div>
                     <div class="col-xs-4">
-                        <h1>2</h1>
-                        BALTIMORE
+                        <h1><%=lastGame.team2Score %></h1>
+                        <%=lastGame.team2.name%>
                     </div>
                 </div>
                 <div class="landing-score-text">
-                    <h2>Encarnacion sinks O's with walk-off</h2>
+                    <h2><%=lastGame.mainTitle %></h2>
                     <p>
-                        Edwin Encarnacion hit a three-run, walk-off home run in the 11th inning as the Blue Jays topped the Orioles in the AL Wild Card Game, 
-                    sending them to the ALDS and a date against the Rangers.
+                        <%=lastGame.description%>
                     </p>
                 </div>
             </div>
         </div>
         <!-- /.Left Panel -->
-
+        <%} %>
 
         <!-- Right Panel -->
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-md-4">
             <div class="panel landing-score-panel">
+                <% foreach (var game in otherGames) { %>
                 <div class="scorebox">
                     <div class="col-xs-4">
-                        <h1>5</h1>
-                        TORONTO
+                        <h1><%=game.team1Score %></h1>
+                        <%=game.team1.name %>
                     </div>
                     <div class="col-xs-4 vs">VS</div>
                     <div class="col-xs-4">
-                        <h1>2</h1>
-                        BALTIMORE
+                        <h1><%=game.team2Score %></h1>
+                        <%=game.team2.name %>
                     </div>
                 </div>
-                <div class="scorebox">
-                    <div class="col-xs-4">
-                        <h1>5</h1>
-                        TORONTO
-                    </div>
-                    <div class="col-xs-4 vs">VS</div>
-                    <div class="col-xs-4">
-                        <h1>2</h1>
-                        BALTIMORE
-                    </div>
-                </div>
-                <div class="scorebox">
-                    <div class="col-xs-4">
-                        <h1>5</h1>
-                        TORONTO
-                    </div>
-                    <div class="col-xs-4 vs">VS</div>
-                    <div class="col-xs-4">
-                        <h1>2</h1>
-                        BALTIMORE
-                    </div>
-                </div>
-                <div class="scorebox">
-                    <div class="col-xs-4">
-                        <h1>5</h1>
-                        TORONTO
-                    </div>
-                    <div class="col-xs-4 vs">VS</div>
-                    <div class="col-xs-4">
-                        <h1>2</h1>
-                        BALTIMORE
-                    </div>
-                </div>
+                <% } %>
             </div>
         </div>
         <!-- /.Right Panel -->
@@ -94,14 +65,15 @@
 
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
+            <div class="panel landing-score-panel">
+                <h1>Teams in the database</h1>
 
-            <h1>Teams in the database</h1>
-
-            <ul>
-                <% foreach (var team in teams) { %>
-                <li><%= team.name %></li>
-                <% } %>
-            </ul>
+                <ul>
+                    <% foreach (var team in allTeams) { %>
+                    <li><%= team.name %></li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
     </div>
 

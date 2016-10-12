@@ -12,6 +12,19 @@ namespace COMP229_F16_Team_Project_1 {
 
         public DbSet<Game> Games { get; set; }
         public DbSet<Team> Teams { get; set; }
-        public DbSet<Week> Week { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+        //    modelBuilder.Entity<Game>()
+        //                .HasRequired(m => m.team1)
+        //                .WithMany(t => t.HomeMatches)
+        //                .HasForeignKey(m => m.team1Id)
+        //                .WillCascadeOnDelete(false);
+
+        //    modelBuilder.Entity<Game>()
+        //                .HasRequired(m => m.GuestTeam)
+        //                .WithMany(t => t.AwayMatches)
+        //                .HasForeignKey(m => m.GuestTeamId)
+        //                .WillCascadeOnDelete(false);
+        //}
     }
 }
