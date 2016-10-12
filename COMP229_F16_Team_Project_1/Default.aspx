@@ -8,6 +8,7 @@
 --%>
 
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="COMP229_F16_Team_Project_1.Default" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Main Container -->
     <div class="row content content-container-90">
@@ -28,11 +29,14 @@
                 </div>
                 <div class="landing-score-text">
                     <h2>Encarnacion sinks O's with walk-off</h2>
-                    <p>Edwin Encarnacion hit a three-run, walk-off home run in the 11th inning as the Blue Jays topped the Orioles in the AL Wild Card Game, 
-                    sending them to the ALDS and a date against the Rangers.</p>
+                    <p>
+                        Edwin Encarnacion hit a three-run, walk-off home run in the 11th inning as the Blue Jays topped the Orioles in the AL Wild Card Game, 
+                    sending them to the ALDS and a date against the Rangers.
+                    </p>
                 </div>
             </div>
-        </div> <!-- /.Left Panel -->
+        </div>
+        <!-- /.Left Panel -->
 
 
         <!-- Right Panel -->
@@ -83,8 +87,23 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- /.Right Panel -->
-    </div> <!-- /.Content Container -->
+        </div>
+        <!-- /.Right Panel -->
+    </div>
+    <!-- /.Content Container -->
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+
+            <h1>Teams in the database</h1>
+
+            <ul>
+                <% foreach (var team in teams) { %>
+                <li><%= team.name %></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
 
 
 </asp:Content>
