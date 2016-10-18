@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
+using System.Diagnostics;
 
 namespace COMP229_F16_Team_Project_1 {
 
@@ -16,6 +17,10 @@ namespace COMP229_F16_Team_Project_1 {
 
         protected void Page_Load(object sender, EventArgs e) {
 
+            if (!IsPostBack) {
+                errorBox.Visible = false;
+                errorBox.InnerText = "";
+            }
         }
 
         protected void registerUser(object sender, EventArgs e) {
@@ -23,11 +28,17 @@ namespace COMP229_F16_Team_Project_1 {
             // create new userStore and userManager objects
             var userStore = new UserStore<IdentityUser>();
             var userManager = new UserManager<IdentityUser>(userStore);
+            userManager.UserValidator = new UserValidator<IdentityUser>(userManager) {
+                AllowOnlyAlphanumericUserNames = false
+            };
+
+            Debug.WriteLine("user name: " + email1.Value);
+            Debug.WriteLine("email: " + email1.Value);
 
             // create a new user object
             var user = new IdentityUser() {
-                UserName = name.Value,
-                Email = email1.Value
+                UserName = email1.Value,
+                Email = email1.Value,
             };
 
             // create a new user in the db and store the results
@@ -43,11 +54,11 @@ namespace COMP229_F16_Team_Project_1 {
                 authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
 
                 // Redirect to the Main Menu Page
-                Response.Redirect("~/Contoso/MainMenu.aspx");
+                Response.Redirect("~/Default.aspx");
             } else {
                 // display error in the AlertFlash div
-                //StatusLabel.Text = result.Errors.FirstOrDefault();
-                //AlertFlash.Visible = true;
+                errorBox.Visible = true;
+                errorBox.InnerText = result.Errors.FirstOrDefault();
             }
 
         }

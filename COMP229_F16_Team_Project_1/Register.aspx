@@ -10,18 +10,20 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="COMP229_F16_Team_Project_1.Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
     <form id="form1" runat="server">
         <!-- Main Container -->
         <div class="row content content-container-90">
+
+            <div class="alert alert-danger" role="alert" ID="errorBox" runat="server">
+
+            </div>
+
             <!-- Main Panel -->
             <div class="col-xs-6 col-xs-offset-3">
                 <div class="panel">
                     <div class="panel-heading">Log In Credentials</div>
-                    
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input runat="server" type="text" class="form-control" id="name" placeholder="Name">
-                    </div>
+
                     <div class="form-group">
                         <label for="email1">Email address</label>
                         <input runat="server" type="email" class="form-control" id="email1" placeholder="Email">
@@ -33,6 +35,9 @@
                     <div class="form-group">
                         <label for="password2">Password</label>
                         <input runat="server" type="password" class="form-control" id="password2" placeholder="Password Confirmation">
+                        <asp:CompareValidator ErrorMessage="Your Passwords Must Match" Type="String" Operator="Equal" 
+                            ControlToValidate="password2" runat="server"
+                            ControlToCompare="password1" CssClass="label label-danger" />
                     </div>
                     <div class="checkbox">
                         <label>
