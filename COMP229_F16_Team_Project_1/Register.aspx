@@ -15,9 +15,7 @@
         <!-- Main Container -->
         <div class="row content content-container-90">
 
-            <div class="alert alert-danger" role="alert" ID="errorBox" runat="server">
-
-            </div>
+            <div class="alert alert-danger" role="alert" id="errorBox" runat="server"></div>
 
             <!-- Main Panel -->
             <div class="col-xs-6 col-xs-offset-3">
@@ -35,15 +33,9 @@
                     <div class="form-group">
                         <label for="password2">Password</label>
                         <input runat="server" type="password" class="form-control" id="password2" placeholder="Password Confirmation">
-                        <asp:CompareValidator ErrorMessage="Your Passwords Must Match" Type="String" Operator="Equal" 
+                        <asp:CompareValidator ErrorMessage="Your Passwords Must Match" Type="String" Operator="Equal"
                             ControlToValidate="password2" runat="server"
                             ControlToCompare="password1" CssClass="label label-danger" />
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox">
-                            Check me out
-                        </label>
                     </div>
                     <div class="text-right">
                         <asp:Button runat="server" CssClass="btn btn-default" OnClick="registerUser" Text="Register" />
