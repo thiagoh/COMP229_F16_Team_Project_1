@@ -28,7 +28,9 @@
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Password" runat="server" />
                     </div>
-                    <asp:button runat="server" CssClass="btn btn-default" onclick="LoginButton_Click" Text="Login"></asp:button>
+                    <div class="text-right">
+                        <asp:Button runat="server" CssClass="btn btn-default" OnClick="LoginButton_Click" Text="Login"></asp:Button>
+                    </div>
                 </div>
             </div>
             <!-- ./Main Panel -->
