@@ -43,12 +43,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Team 1</label>
-                        <select name="team1Id">
-                            <option value="">Select a valid Team</option>
-                            <% foreach (var team1 in teams1) { %>
-                            <option value="<%=team1.ID %>"><%=team1.name %></option>
-                            <% } %>
-                        </select>
+                        <asp:ListBox ID="teams1ListBox" runat="server"></asp:ListBox>
                     </div>
                     <div class="form-group">
                         <label for="score1">Score</label>
@@ -65,12 +60,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Team 2</label>
-                        <select name="team2Id">
-                            <option value="">Select a valid Team</option>
-                             <% foreach (var team2 in teams2) { %>
-                            <option value="<%=team2.ID %>"><%=team2.name %></option>
-                            <% } %>
-                        </select>
+                        <asp:ListBox ID="teams2ListBox" runat="server"></asp:ListBox>
                     </div>
                     <div class="form-group">
                         <label for="score2">Score</label>
