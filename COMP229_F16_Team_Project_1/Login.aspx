@@ -1,7 +1,7 @@
 ﻿<%--
     Login.aspx
     COMP229 Assignment 1
-    Thiago H 300xxxxxx
+    Thiago de Andrade Souza 300886181
     Edward Song 300915530
     Created on 2016-10-05
     Summary: Users can authenticate themselves using a username and password on this page. Also doubles as the registration page.
