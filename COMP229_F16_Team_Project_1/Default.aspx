@@ -19,7 +19,7 @@
         <div class="col-xs-12 col-md-offset-2 col-md-4">
             <% if (lastGame != null) { %>
             <div class="panel landing-score-panel">
-                <div class="row scorebox" style="border:0;" data-toggle="modal" data-target="#modal-game-<%=lastGame.ID %>">
+                <div class="row scorebox" style="border: 0;" data-toggle="modal" data-target="#modal-game-<%=lastGame.ID %>">
                     <div class="col-xs-5 col-md-5">
                         <div class="thumbnail">
                             <img src="<%=lastGame.team1.logoPath %>" alt="Team 1 Logo" />
@@ -55,10 +55,31 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title"><%=lastGame.team1.name %> VS <%=lastGame.team2.name %></h4>
+                            <h2><%=lastGame.mainTitle %></h2>
                         </div>
                         <div class="modal-body">
-                            <h2><%=lastGame.mainTitle %></h2>
+
+                            <div class="scorebox" style="border: 0;">
+                                <div class="col-xs-5 col-md-5">
+                                    <div class="thumbnail">
+                                        <img src="<%=lastGame.team1.logoPath %>" alt="Team 1 Logo" />
+                                        <div class="caption">
+                                            <h3><%=lastGame.team1Score %></h3>
+                                            <p><%=lastGame.team1.name%></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-md-2 vs">VS</div>
+                                <div class="col-xs-5 col-md-5">
+                                    <div class="thumbnail">
+                                        <img src="<%=lastGame.team2.logoPath %>" alt="Team 2 Logo" />
+                                        <div class="caption">
+                                            <h3><%=lastGame.team2Score %></h3>
+                                            <p><%=lastGame.team2.name%></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <p>
                                 <%=lastGame.description%>
                             </p>
@@ -95,10 +116,31 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title"><%=game.team1.name %> VS <%=game.team2.name %></h4>
+                                <h2><%=game.mainTitle %></h2>
                             </div>
                             <div class="modal-body">
-                                <h2><%=game.mainTitle %></h2>
+
+                                <div class="scorebox" style="border: 0;">
+                                    <div class="col-xs-5 col-md-5">
+                                        <div class="thumbnail">
+                                            <img src="<%=game.team1.logoPath %>" alt="Team 1 Logo" />
+                                            <div class="caption">
+                                                <h3><%=game.team1Score %></h3>
+                                                <p><%=game.team1.name%></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2 col-md-2 vs">VS</div>
+                                    <div class="col-xs-5 col-md-5">
+                                        <div class="thumbnail">
+                                            <img src="<%=game.team2.logoPath %>" alt="Team 2 Logo" />
+                                            <div class="caption">
+                                                <h3><%=game.team2Score %></h3>
+                                                <p><%=game.team2.name%></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <p>
                                     <%=game.description%>
                                 </p>
