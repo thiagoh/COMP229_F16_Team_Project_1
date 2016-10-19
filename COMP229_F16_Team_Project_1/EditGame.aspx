@@ -35,7 +35,7 @@
                     
                     <div class="form-group">
                         <label for="description">How many Spectators</label>
-                        <input runat="server" type="textnumber" class="form-control" id="spectators" placeholder="Game spectators count">
+                        <input runat="server" type="number" class="form-control" id="spectators" placeholder="Game spectators count">
                     </div>
                     
                     <div class="form-group">
