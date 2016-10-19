@@ -116,6 +116,8 @@ namespace COMP229_F16_Team_Project_1 {
                     game.mainTitle = title.Value;
                     game.description = description.Value;
                     game.weekNumber = Convert.ToInt32(weekNumber.Value);
+
+                    validateGame(game);
                 }
 
                 // save the team
@@ -123,6 +125,25 @@ namespace COMP229_F16_Team_Project_1 {
 
                 Response.Redirect("~/Default.aspx");
 
+            }
+        }
+
+        private void validateGame(Game game) {
+
+            if (game.team1Id == game.team2Id) {
+                throw new Exception("Teams cannot be the same");
+            }
+
+            if (game.mainTitle.Trim().Count() == 0) {
+                throw new Exception("Game title is required");
+            }
+
+            if (game.description.Trim().Count() == 0) {
+                throw new Exception("Game title is required");
+            }
+
+            if (game.weekNumber < 0 || game.weekNumber > 52) {
+                throw new Exception("Game week number is invalid");
             }
         }
     }
