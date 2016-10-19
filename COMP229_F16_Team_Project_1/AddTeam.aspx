@@ -21,10 +21,10 @@
                 <div class="row" id="preview">
                     <div class="col-xs-12 col-md-6 col-md-offset-3">
                         <div class="thumbnail">
-                            <img id="logoPreview" src="" />
+                            <img id="logoPreview" src="/Assets/img/img-placeholder-2.png" />
                             <div class="caption">
-                                <h3 id="namePreview"></h3>
-                                <p id="descriptionPreview"></p>
+                                <h3 id="namePreview">Team Name</h3>
+                                <p id="descriptionPreview">Team Story</p>
                             </div>
                         </div>
                     </div>

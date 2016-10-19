@@ -66,6 +66,10 @@ input {
     text-align: center;
 }
 
+.scorebox img {
+    height: 130px;
+}
+
 .scorebox:hover {
     background-color: #333333;
 }
@@ -76,6 +80,7 @@ input {
 
 .landing-score-text {
     padding: 20px;
+    text-align: center;
 }
 
 .content-container-90 {

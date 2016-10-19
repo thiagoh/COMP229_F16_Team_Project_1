@@ -4,27 +4,26 @@
 
     $(function () {
 
-        console.log('loaded');
-        $('#preview').hide();
-
         $('input.description:first').keyup(function () {
-            console.log('desc');
 
-            $('#descriptionPreview').html($('input.description:first').val());
+            var val = $('input.description:first').val();
+
+            if ($.trim(val).length <= 0) {
+                val = 'Team story';
+            }
+
+            $('#descriptionPreview').html(val);
         });
 
         $('input.name:first').keyup(function () {
-            console.log('name');
 
             var val = $('input.name:first').val();
 
-            $('#namePreview').html(val);
-
-            if ($.trim(val).length > 0) {
-                $('#preview').show();
-            } else {
-                $('#preview').hide();
+            if ($.trim(val).length <= 0) {
+                val = 'Team Name';
             }
+
+            $('#namePreview').html(val);
         });
 
         $('input.logoPath:first').keyup(function () {
@@ -33,9 +32,11 @@
 
             var val = $('input.logoPath:first').val();
 
-            if ($.trim(val).length > 0) {
-                $('#logoPreview').attr('src', val);
+            if ($.trim(val).length <= 0) {
+                val = '/Assets/img/img-placeholder-2.png';
             }
+
+            $('#logoPreview').attr('src', val);
         });
     });
 }());

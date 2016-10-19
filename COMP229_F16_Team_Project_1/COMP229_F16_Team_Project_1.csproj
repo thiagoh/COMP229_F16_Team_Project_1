@@ -138,6 +138,8 @@
     <Content Include="AddGame.aspx" />
     <Content Include="AddTeam.aspx" />
     <Content Include="AllGames.aspx" />
+    <Content Include="Assets\img\img-placeholder-2.png" />
+    <Content Include="Assets\img\img-placeholder.png" />
     <Content Include="Content\custom.css" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayGame.aspx" />
@@ -263,7 +265,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\img\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
