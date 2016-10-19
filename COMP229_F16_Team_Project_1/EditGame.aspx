@@ -1,5 +1,5 @@
 ﻿<%--
-    AddGame.aspx
+    EditGame.aspx
     COMP229 Team Project 1 - Game Tracker
     Thiago de Andrade Souza 300886181
     Edward Song 300915530
@@ -25,12 +25,22 @@
 
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input runat="server" type="text" class="form-control" id="Text1" placeholder="Game title">
+                        <input runat="server" type="text" class="form-control" id="title" placeholder="Game title">
                     </div>
 
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input runat="server" type="text" class="form-control" id="Text2" placeholder="Game description">
+                        <input runat="server" type="text" class="form-control" id="description" placeholder="Game description">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">How many Spectators</label>
+                        <input runat="server" type="textnumber" class="form-control" id="spectators" placeholder="Game spectators count">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Week</label>
+                        <input runat="server" type="number" class="form-control" id="weekNumber" placeholder="Game Week Number">
                     </div>
                 </div>
 
@@ -72,7 +82,7 @@
 
             <div class="col-xs-12 col-md-12">
                 <div class="text-right">
-                    <asp:Button runat="server" CssClass="btn btn-default" OnClick="addGame_click" Text="Login"></asp:Button>
+                    <asp:Button runat="server" CssClass="btn btn-default" OnClick="addGame_click" ID="editButton" Text="Add Game"></asp:Button>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 ﻿<%--
-    AddTeam.aspx
+    EditTeam.aspx
     COMP229 Team Project 1 - Game Tracker
     Thiago de Andrade Souza 300886181
     Edward Song 300915530
