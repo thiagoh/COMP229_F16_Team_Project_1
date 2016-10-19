@@ -111,7 +111,7 @@ namespace COMP229_F16_Team_Project_1 {
                     game.team2Score = Convert.ToInt32(score2.Value);
 
                     game.description = description.Value;
-                    game.weekNumber= weekNumber.Value;
+                    game.weekNumber= Convert.ToInt32(weekNumber.Value);
                 }
 
                 // save the team
