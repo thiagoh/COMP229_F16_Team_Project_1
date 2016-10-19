@@ -64,9 +64,11 @@ namespace COMP229_F16_Team_Project_1 {
             ArrayList values = new ArrayList();
 
             foreach (var item in teams1) {
-                values.Add(new ListItem { Text = item.name, Value = Convert.ToString(item.ID) });
+                values.Add(new ListItem(item.name, Convert.ToString(item.ID)));
             }
 
+            teams1ListBox.DataTextField = "Text";
+            teams1ListBox.DataValueField = "Value";
             teams1ListBox.DataSource = values;
             teams1ListBox.DataBind();
         }
@@ -74,9 +76,10 @@ namespace COMP229_F16_Team_Project_1 {
             ArrayList values = new ArrayList();
 
             foreach (var item in teams2) {
-                values.Add(new ListItem { Text = item.name, Value = Convert.ToString(item.ID) });
+                values.Add(new ListItem(item.name, Convert.ToString(item.ID)));
             }
-
+            teams2ListBox.DataTextField = "Text";
+            teams2ListBox.DataValueField = "Value";
             teams2ListBox.DataSource = values;
             teams2ListBox.DataBind();
         }
@@ -110,8 +113,9 @@ namespace COMP229_F16_Team_Project_1 {
                     game.team1Score = Convert.ToInt32(score1.Value);
                     game.team2Score = Convert.ToInt32(score2.Value);
 
+                    game.mainTitle = title.Value;
                     game.description = description.Value;
-                    game.weekNumber= Convert.ToInt32(weekNumber.Value);
+                    game.weekNumber = Convert.ToInt32(weekNumber.Value);
                 }
 
                 // save the team

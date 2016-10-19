@@ -53,7 +53,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Team 1</label>
-                        <asp:ListBox ID="teams1ListBox" runat="server"></asp:ListBox>
+                        <asp:ListBox CssClass="form-control" Rows="1" ID="teams1ListBox" runat="server"></asp:ListBox>
                     </div>
                     <div class="form-group">
                         <label for="score1">Score</label>
@@ -70,7 +70,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Team 2</label>
-                        <asp:ListBox ID="teams2ListBox" runat="server"></asp:ListBox>
+                        <asp:ListBox CssClass="form-control" Rows="1" ID="teams2ListBox" runat="server"></asp:ListBox>
                     </div>
                     <div class="form-group">
                         <label for="score2">Score</label>
