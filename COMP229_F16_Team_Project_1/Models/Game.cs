@@ -10,9 +10,9 @@ namespace COMP229_F16_Team_Project_1.Models {
     public class Game {
 
         public int ID { get; set; }
-        public string mainTitle { get; set; }
+        public string mainTitle { get; set; }   
         public string description { get; set; }
-
+        public int spectators { get; set; }
         public int weekNumber { get; set; }
 
         //("FK_Game_ToTeam2")

@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddGame.aspx" />
+    <Content Include="AddTeam.aspx" />
     <Content Include="AllGames.aspx" />
     <Content Include="Content\custom.css" />
     <Content Include="Default.aspx" />
@@ -147,6 +148,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Register.aspx" />
+    <Content Include="Scripts\add-team.js" />
     <Content Include="Scripts\app.js" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
@@ -194,6 +196,13 @@
     </Compile>
     <Compile Include="AddGame.aspx.designer.cs">
       <DependentUpon>AddGame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddTeam.aspx.cs">
+      <DependentUpon>AddTeam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTeam.aspx.designer.cs">
+      <DependentUpon>AddTeam.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllGames.aspx.cs">
       <DependentUpon>AllGames.aspx</DependentUpon>

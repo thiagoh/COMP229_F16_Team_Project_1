@@ -63,7 +63,6 @@
         <!-- Main Content -->
         <main>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        
             </asp:ContentPlaceHolder>
         </main>
         
@@ -75,9 +74,10 @@
     </div>
 
     <!-- Scripts Section -->
-    <script src="Scripts/jquery-2.2.4.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/app.js"></script>
+    <script src="/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/app.js"></script>
 
+    <asp:ContentPlaceHolder ID="scripts" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>
