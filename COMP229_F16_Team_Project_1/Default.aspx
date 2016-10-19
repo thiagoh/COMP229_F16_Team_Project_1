@@ -159,16 +159,22 @@
     <!-- /.Content Container -->
 
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="panel landing-score-panel">
-                <h1>Teams in the database</h1>
+        <div class="col-md-8 col-md-offset-2">
+            <h1>The League Teams are...</h1>
 
-                <ul>
-                    <% foreach (var team in allTeams) { %>
-                    <li><%= team.name %></li>
-                    <% } %>
-                </ul>
+            <% 
+                for (var i = 0; i < allTeams.Count(); i++) {
+                    var team = allTeams[i];
+            %>
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="<%=team.logoPath %>" alt="Team 2 Logo" style="height:130px;" />
+                    <div class="caption">
+                        <h3><%=team.name %></h3>
+                    </div>
+                </div>
             </div>
+            <% } %>
         </div>
     </div>
 
