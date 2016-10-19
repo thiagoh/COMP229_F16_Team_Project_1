@@ -22,7 +22,7 @@ namespace COMP229_F16_Team_Project_1.Models {
         public int team1Score { get; set; }
         public int team2Score { get; set; }
 
-        public DateTime date { get; set; }
+        //public DateTime date { get; set; }
 
         [ForeignKey("team1Id")]
         public virtual Team team1 { get; set; }
