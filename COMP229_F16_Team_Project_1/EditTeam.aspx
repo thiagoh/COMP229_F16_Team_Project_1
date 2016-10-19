@@ -7,7 +7,7 @@
     Summary: This page allows an authorized user to add a new team to the database
 --%>
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddTeam.aspx.cs" Inherits="COMP229_F16_Team_Project_1.AddTeam" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditTeam.aspx.cs" Inherits="COMP229_F16_Team_Project_1.AddTeam" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -53,7 +53,7 @@
             <div class="col-xs-12 col-md-12">
                 <div class="text-right">
                     <asp:Button runat="server" CssClass="btn btn-default" OnClick="cancel_Click" Text="Cancel"></asp:Button>
-                    <asp:Button runat="server" CssClass="btn btn-default" OnClick="addTeam_click" Text="Add Team"></asp:Button>
+                    <asp:Button runat="server" CssClass="btn btn-default" OnClick="addTeam_click" Text="Add Team" ID="editButton"></asp:Button>
                 </div>
             </div>
         </div>

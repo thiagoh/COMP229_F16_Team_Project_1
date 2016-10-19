@@ -135,8 +135,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddGame.aspx" />
-    <Content Include="AddTeam.aspx" />
+    <Content Include="EditGame.aspx" />
+    <Content Include="EditTeam.aspx" />
     <Content Include="AllGames.aspx" />
     <Content Include="Assets\img\img-placeholder-2.png" />
     <Content Include="Assets\img\img-placeholder.png" />
@@ -192,19 +192,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddGame.aspx.cs">
-      <DependentUpon>AddGame.aspx</DependentUpon>
+    <Compile Include="EditGame.aspx.cs">
+      <DependentUpon>EditGame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddGame.aspx.designer.cs">
-      <DependentUpon>AddGame.aspx</DependentUpon>
+    <Compile Include="EditGame.aspx.designer.cs">
+      <DependentUpon>EditGame.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddTeam.aspx.cs">
-      <DependentUpon>AddTeam.aspx</DependentUpon>
+    <Compile Include="EditTeam.aspx.cs">
+      <DependentUpon>EditTeam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddTeam.aspx.designer.cs">
-      <DependentUpon>AddTeam.aspx</DependentUpon>
+    <Compile Include="EditTeam.aspx.designer.cs">
+      <DependentUpon>EditTeam.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllGames.aspx.cs">
       <DependentUpon>AllGames.aspx</DependentUpon>

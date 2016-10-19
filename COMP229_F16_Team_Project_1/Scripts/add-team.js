@@ -4,7 +4,7 @@
 
     $(function () {
 
-        $('input.description:first').keyup(function () {
+        var updateFields = function () {
 
             var val = $('input.description:first').val();
 
@@ -13,30 +13,30 @@
             }
 
             $('#descriptionPreview').html(val);
-        });
 
-        $('input.name:first').keyup(function () {
-
-            var val = $('input.name:first').val();
+            val = $('input.name:first').val();
 
             if ($.trim(val).length <= 0) {
                 val = 'Team Name';
             }
 
             $('#namePreview').html(val);
-        });
-
-        $('input.logoPath:first').keyup(function () {
 
             $('#logoPreview').attr('src', '');
 
-            var val = $('input.logoPath:first').val();
+            val = $('input.logoPath:first').val();
 
             if ($.trim(val).length <= 0) {
                 val = '/Assets/img/img-placeholder-2.png';
             }
 
             $('#logoPreview').attr('src', val);
-        });
+        }
+
+        $('input.name:first').keyup(updateFields);
+        $('input.description:first').keyup(updateFields);
+        $('input.logoPath:first').keyup(updateFields);
+
+        updateFields();
     });
 }());

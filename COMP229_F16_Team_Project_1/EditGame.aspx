@@ -7,7 +7,7 @@
     Summary: This page allows an authorized user to add a new game to the database
 --%>
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddGame.aspx.cs" Inherits="COMP229_F16_Team_Project_1.AddGame" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditGame.aspx.cs" Inherits="COMP229_F16_Team_Project_1.AddGame" %>
 
 <%@ Import Namespace="COMP229_F16_Team_Project_1" %>
 <%@ Import Namespace="COMP229_F16_Team_Project_1.Models" %>

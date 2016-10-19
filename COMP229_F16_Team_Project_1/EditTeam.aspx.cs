@@ -18,6 +18,31 @@ namespace COMP229_F16_Team_Project_1 {
 
         protected void Page_Load(object sender, EventArgs e) {
 
+            if ((!IsPostBack) && (Request.QueryString.Count > 0)) {
+
+                setTeam();
+            }
+        }
+
+        private void setTeam() {
+
+            int teamId = Convert.ToInt32(Request.QueryString["teamId"]);
+
+            using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection")) {
+
+                var team = (from _team in db.Teams
+                            where _team.ID == teamId
+                            select _team).FirstOrDefault();
+
+                if (team != null) {
+
+                    name.Value = team.name;
+                    logoPath.Value = team.logoPath;
+                    description.Value = team.description;
+
+                    editButton.Text = "Edit Team";
+                }
+            }
         }
 
         protected void cancel_Click(object sender, EventArgs e) {
