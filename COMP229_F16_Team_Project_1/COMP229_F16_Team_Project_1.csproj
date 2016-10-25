@@ -135,11 +135,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\img\img-placeholder-1.png" />
+    <Content Include="Assets\img\img-placeholder-2.png" />
+    <Content Include="Assets\img\somberlain_studios.png" />
     <Content Include="EditGame.aspx" />
     <Content Include="EditTeam.aspx" />
     <Content Include="AllGames.aspx" />
-    <Content Include="Assets\img\img-placeholder-2.png" />
-    <Content Include="Assets\img\img-placeholder.png" />
     <Content Include="Content\custom.css" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayGame.aspx" />
