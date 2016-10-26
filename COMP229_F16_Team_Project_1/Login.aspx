@@ -27,9 +27,10 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Password" runat="server" />
+                        <br />
                     </div>
                     <div class="text-right">
-                        <asp:Button runat="server" CssClass="btn btn-default" OnClick="LoginButton_Click" Text="Login"></asp:Button>
+                        <asp:Button runat="server" CssClass="btn btn-primary" OnClick="LoginButton_Click" Text="Login"></asp:Button>
                     </div>
                 </div>
             </div>

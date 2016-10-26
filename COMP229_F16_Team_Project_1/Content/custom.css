@@ -15,8 +15,8 @@ body {
     padding-top: 50px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow-x: hidden;
-    color: #cfba6b;
-    background-color: #111111;
+    color: #cfba6b !important;
+    background-color: #111111 !important;
 }
 
 input {
@@ -62,7 +62,7 @@ input {
 .scorebox {
     margin: 5px;
     border: 1px solid #cfba6b;
-    min-height: 100px;
+    min-height: 120px;
     text-align: center;
 }
 
@@ -70,7 +70,7 @@ input {
     height: 130px;
 }
 
-.scorebox:hover {
+.hover-highlight:hover {
     background-color: #333333;
 }
 
@@ -91,4 +91,36 @@ input {
 
 .landing-score-panel {
     min-height: 450px;
+}
+
+.logo-box img{
+    display: block;
+    max-width: 90%;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+.modal-content {
+    color: #cfba6b;
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+.modal-header {
+  border-bottom: 1px solid;
+  color: #cfba6b;
+}
+
+.thumbnail {
+    
+    background-color: #333333;
+    border: 0;
+    height: 250px;
+}
+
+.caption {
+    text-align: center;
+    color: #cfba6b !important;
 }

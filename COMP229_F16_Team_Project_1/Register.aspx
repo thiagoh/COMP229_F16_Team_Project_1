@@ -38,7 +38,7 @@
                             ControlToCompare="password1" CssClass="label label-danger" />
                     </div>
                     <div class="text-right">
-                        <asp:Button runat="server" CssClass="btn btn-default" OnClick="registerUser" Text="Register" />
+                        <asp:Button runat="server" CssClass="btn btn-primary" OnClick="registerUser" Text="Register" />
                     </div>
                 </div>
             </div>

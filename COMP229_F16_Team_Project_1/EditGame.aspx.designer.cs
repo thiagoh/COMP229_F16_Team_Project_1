@@ -94,6 +94,15 @@ namespace COMP229_F16_Team_Project_1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText score2;
         
         /// <summary>
+        /// deleteButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteButton;
+        
+        /// <summary>
         /// editButton control.
         /// </summary>
         /// <remarks>

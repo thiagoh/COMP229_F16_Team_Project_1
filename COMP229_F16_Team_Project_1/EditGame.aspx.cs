@@ -146,5 +146,37 @@ namespace COMP229_F16_Team_Project_1 {
                 throw new Exception("Game week number is invalid");
             }
         }
+
+        protected void deleteGame_click(object sender, EventArgs e) {
+
+            int gameID = 0;
+
+            // Check if query string value exists
+            if (!String.IsNullOrEmpty(Request.QueryString["gameID"]))
+            {
+                // Query string value is there so now use it
+                gameID = Convert.ToInt32(Request.QueryString["gameID"]);
+            }
+
+
+            if (gameID > 0)
+            {
+                // use EF and LINQ to find the selected game and delete it from DB!
+                using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection"))
+                {
+                    // create a Game object and store the query inside it
+                    Game toBeDeleted = (from game in db.Games
+                                        where game.ID == gameID
+                                        select game).FirstOrDefault();
+
+                    // remove and save!
+                    db.Games.Remove(toBeDeleted);
+                    db.SaveChanges();
+
+                    // Go back to the home page
+                    Response.Redirect("Default.aspx");
+                }
+            }
+        }
     }
 }

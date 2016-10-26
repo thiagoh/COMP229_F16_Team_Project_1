@@ -48,12 +48,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                   <li id ="home" runat="server"><a href="Default.aspx"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a></li>
-                  <li id ="allgames" runat="server"><a href="AllGames.aspx"><i class="fa fa-list" aria-hidden="true"></i> View All Games</a></li>
                   <% if (loggedIn) { %>
-                  <li id ="addgame" runat="server"><a href="AddGame.aspx"><i class="fa fa-plus" aria-hidden="true"></i> Add a New Game</a></li>
+                  <li id ="addgame" runat="server"><a href="EditGame.aspx"><i class="fa fa-plus" aria-hidden="true"></i> Add a New Game</a></li>
                   <% } %>
                   <% if (!loggedIn) { %>
                   <li id ="login" runat="server"><a href="Login.aspx"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a></li>
+                  <li id ="register" runat="server"><a href="Register.aspx"><i class="fa fa-list" aria-hidden="true"></i> Register</a></li>
                   <% } %>
               </ul>
             </div><!-- /.navbar-collapse -->
