@@ -10,7 +10,7 @@
 namespace COMP229_F16_Team_Project_1 {
     
     
-    public partial class AddTeam {
+    public partial class EditTeam {
         
         /// <summary>
         /// form1 control.

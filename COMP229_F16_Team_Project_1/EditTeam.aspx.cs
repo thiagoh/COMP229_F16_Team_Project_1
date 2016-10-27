@@ -13,8 +13,17 @@ using System.Diagnostics;
 using COMP229_F16_Team_Project_1.Models;
 using System.Collections;
 
+/*
+    EditTeam.aspx.cs
+    COMP229 Team Project 1 - Game Tracker
+    Thiago de Andrade Souza 300886181
+    Edward Song 300915530
+    Created on 2016-10-26
+    Summary: This is used to edit teams (CRUD)
+*/
+
 namespace COMP229_F16_Team_Project_1 {
-    public partial class AddTeam : System.Web.UI.Page {
+    public partial class EditTeam : System.Web.UI.Page {
 
         protected void Page_Load(object sender, EventArgs e) {
 

@@ -8,6 +8,7 @@
 --%>
 
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="COMP229_F16_Team_Project_1.Default" %>
+<%@ MasterType virtualpath="~/Site1.Master" %>
 
 <%@ Import Namespace="COMP229_F16_Team_Project_1" %>
 <%@ Import Namespace="COMP229_F16_Team_Project_1.Models" %>
@@ -63,7 +64,9 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h2>
                                 <%=lastGame.mainTitle %>
+                                <% if (Master.loggedIn ) { %>
                                 <a type="button" class="btn btn-primary btn-sm" href="EditGame.aspx?GameID=<%=lastGame.ID%>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a>
+                                <% } %>
                             </h2>
                         </div>
                         <div class="modal-body scorebox" style="border: 0px">
@@ -134,7 +137,9 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h2>
                                 <%=game.mainTitle %>
+                                <% if (Master.loggedIn) { %>
                                 <a type="button" class="btn btn-primary btn-sm" href="EditGame.aspx?GameID=<%=game.ID%>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a>
+                                <% } %>
                             </h2>
                             </div>
                             <div class="modal-body scorebox" style="border: 0">

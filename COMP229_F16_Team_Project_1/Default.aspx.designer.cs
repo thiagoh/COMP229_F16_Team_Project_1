@@ -11,5 +11,17 @@ namespace COMP229_F16_Team_Project_1 {
     
     
     public partial class Default {
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new COMP229_F16_Team_Project_1.Site1 Master {
+            get {
+                return ((COMP229_F16_Team_Project_1.Site1)(base.Master));
+            }
+        }
     }
 }

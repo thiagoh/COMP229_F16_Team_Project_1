@@ -7,7 +7,7 @@
     Summary: This page allows an authorized user to add a new team to the database
 --%>
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditTeam.aspx.cs" Inherits="COMP229_F16_Team_Project_1.AddTeam" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditTeam.aspx.cs" Inherits="COMP229_F16_Team_Project_1.EditTeam" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

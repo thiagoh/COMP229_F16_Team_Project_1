@@ -16,12 +16,16 @@ using System.Collections;
 namespace COMP229_F16_Team_Project_1 {
     public partial class AddGame : System.Web.UI.Page {
 
+        public int gameId;
         public List<Team> teams1 { get; set; }
         public List<Team> teams2 { get; set; }
 
         protected void Page_Load(object sender, EventArgs e) {
 
             if (!IsPostBack) {
+
+                errorBox.Visible = false;
+                errorBox.InnerText = "";
 
                 using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection")) {
 
@@ -49,11 +53,30 @@ namespace COMP229_F16_Team_Project_1 {
 
                 if (game != null) {
 
+                    this.gameId = game.ID;
                     title.Value = game.mainTitle;
                     description.Value = game.description;
-
+                    spectators.Value = Convert.ToString(game.spectators);
+                    weekNumber.Value = Convert.ToString(game.weekNumber);
                     score1.Value = Convert.ToString(game.team1Score);
                     score2.Value = Convert.ToString(game.team2Score);
+
+                    int ix = 0;
+                    foreach (ListItem item in teams1ListBox.Items) {
+                        if (item.Value.Equals(Convert.ToString(game.team1Id))) {
+                            teams1ListBox.SelectedIndex = ix;
+                            break;
+                        }
+                        ix++;
+                    }
+                    ix = 0;
+                    foreach (ListItem item in teams2ListBox.Items) {
+                        if (item.Value.Equals(Convert.ToString(game.team2Id))) {
+                            teams2ListBox.SelectedIndex = ix;
+                            break;
+                        }
+                        ix++;
+                    }
 
                     editButton.Text = "Edit Game";
                 }
@@ -84,47 +107,51 @@ namespace COMP229_F16_Team_Project_1 {
             teams2ListBox.DataBind();
         }
 
-        protected void addGame_click(object sender, EventArgs e) {
+        protected void editGame_click(object sender, EventArgs e) {
 
-            //Debug.WriteLine(team)
+            try {
 
-            using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection")) {
+                using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection")) {
 
-                int gameId = Convert.ToInt32(Request.QueryString["gameId"]);
+                    int gameId = Convert.ToInt32(Request.QueryString["gameId"]);
 
-                Game game = null;
+                    Game game = null;
 
-                if (gameId == 0) {
-                    game = new Game();
-                    db.Games.Add(game);
+                    if (gameId == 0) {
+                        game = new Game();
+                        db.Games.Add(game);
 
-                } else {
-                    game = (from _game in db.Games
-                            where _game.ID == gameId
-                            select _game).FirstOrDefault();
+                    } else {
+                        game = (from _game in db.Games
+                                where _game.ID == gameId
+                                select _game).FirstOrDefault();
+                    }
+
+                    if (game != null) {
+
+                        game.team1Id = Convert.ToInt32(teams1ListBox.SelectedItem.Value);
+                        game.team2Id = Convert.ToInt32(teams2ListBox.SelectedItem.Value);
+
+                        game.spectators = Convert.ToInt32(spectators.Value);
+                        game.team1Score = Convert.ToInt32(score1.Value);
+                        game.team2Score = Convert.ToInt32(score2.Value);
+
+                        game.mainTitle = title.Value;
+                        game.description = description.Value;
+                        game.weekNumber = Convert.ToInt32(weekNumber.Value);
+
+                        validateGame(game);
+                    }
+
+                    // save the team
+                    db.SaveChanges();
+
+                    Response.Redirect("~/Default.aspx");
                 }
 
-                if (game != null) {
-
-                    game.team1Id = Convert.ToInt32(teams1ListBox.SelectedItem.Value);
-                    game.team2Id = Convert.ToInt32(teams2ListBox.SelectedItem.Value);
-
-                    game.spectators = Convert.ToInt32(spectators.Value);
-                    game.team1Score = Convert.ToInt32(score1.Value);
-                    game.team2Score = Convert.ToInt32(score2.Value);
-
-                    game.mainTitle = title.Value;
-                    game.description = description.Value;
-                    game.weekNumber = Convert.ToInt32(weekNumber.Value);
-
-                    validateGame(game);
-                }
-
-                // save the team
-                db.SaveChanges();
-
-                Response.Redirect("~/Default.aspx");
-
+            } catch (Exception ex) {
+                errorBox.Visible = true;
+                errorBox.InnerText = ex.Message;
             }
         }
 
@@ -152,18 +179,15 @@ namespace COMP229_F16_Team_Project_1 {
             int gameID = 0;
 
             // Check if query string value exists
-            if (!String.IsNullOrEmpty(Request.QueryString["gameID"]))
-            {
+            if (!String.IsNullOrEmpty(Request.QueryString["gameID"])) {
                 // Query string value is there so now use it
                 gameID = Convert.ToInt32(Request.QueryString["gameID"]);
             }
 
 
-            if (gameID > 0)
-            {
+            if (gameID > 0) {
                 // use EF and LINQ to find the selected game and delete it from DB!
-                using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection"))
-                {
+                using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection")) {
                     // create a Game object and store the query inside it
                     Game toBeDeleted = (from game in db.Games
                                         where game.ID == gameID

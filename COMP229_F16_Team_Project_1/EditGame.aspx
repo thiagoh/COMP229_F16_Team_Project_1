@@ -19,6 +19,7 @@
         <div class="row content content-container-90">
 
             <div class="col-xs-12 col-md-12">
+                <div class="alert alert-danger" role="alert" id="errorBox" runat="server"></div>
 
                 <div class="panel">
                     <div class="panel-heading">Game General Info</div>
@@ -82,8 +83,10 @@
 
             <div class="col-xs-12 col-md-12">
                 <div class="text-right">
+                    <% if (gameId > 0) { %>
                     <asp:Button runat="server" CssClass="btn btn-danger" OnClick="deleteGame_click" ID="deleteButton" Text="Delete Game"></asp:Button>
-                    <asp:Button runat="server" CssClass="btn btn-success" OnClick="addGame_click" ID="editButton" Text="Add Game"></asp:Button>
+                    <% } %>
+                    <asp:Button runat="server" CssClass="btn btn-success" OnClick="editGame_click" ID="editButton" Text="Add Game"></asp:Button>
                 </div>
             </div>
         </div>
