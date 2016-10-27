@@ -84,13 +84,16 @@
             <div class="col-xs-12 col-md-12">
                 <div class="text-right">
                     <% if (gameId > 0) { %>
-                    <asp:Button runat="server" CssClass="btn btn-danger" OnClick="deleteGame_click" ID="deleteButton" Text="Delete Game"></asp:Button>
+                    <asp:Button runat="server" CssClass="btn btn-danger" OnClientClick="return confirmDeleteGame()" OnClick="deleteGame_click" ID="deleteButton" Text="Delete Game"></asp:Button>
                     <% } %>
-                    <asp:Button runat="server" CssClass="btn btn-default" OnClick="cancel_Click" Text="Cancel"></asp:Button>
+                    <asp:Button runat="server" CssClass="btn btn-warning" OnClick="cancel_Click" Text="Cancel"></asp:Button>
                     <asp:Button runat="server" CssClass="btn btn-success" OnClick="editGame_click" ID="editButton" Text="Add Game"></asp:Button>
                 </div>
             </div>
         </div>
     </form>
 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="scripts" runat="server">
+    <script src="/Scripts/edit-game.js"></script>
 </asp:Content>

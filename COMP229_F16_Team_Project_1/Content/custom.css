@@ -117,7 +117,7 @@ input {
     
     background-color: #333333;
     border: 0;
-    height: 250px;
+    min-height: 250px;
 }
 
 .caption {

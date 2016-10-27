@@ -152,7 +152,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Register.aspx" />
-    <Content Include="Scripts\add-team.js" />
+    <Content Include="Scripts\edit-game.js" />
+    <Content Include="Scripts\edit-team.js" />
     <Content Include="Scripts\app.js" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />

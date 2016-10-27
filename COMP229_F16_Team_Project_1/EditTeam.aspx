@@ -61,5 +61,5 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="scripts" runat="server">
-    <script src="/Scripts/add-team.js"></script>
+    <script src="/Scripts/edit-team.js"></script>
 </asp:Content>
