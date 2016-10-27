@@ -17,6 +17,7 @@
         <div class="row content content-container-90">
 
             <div class="col-xs-12 col-md-12">
+                <div class="alert alert-danger" role="alert" id="errorBox" runat="server"></div>
 
                 <div class="row" id="preview">
                     <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -53,7 +54,7 @@
             <div class="col-xs-12 col-md-12">
                 <div class="text-right">
                     <asp:Button runat="server" CssClass="btn btn-default" OnClick="cancel_Click" Text="Cancel"></asp:Button>
-                    <asp:Button runat="server" CssClass="btn btn-default" OnClick="addTeam_click" Text="Add Team" ID="editButton"></asp:Button>
+                    <asp:Button runat="server" CssClass="btn btn-default" OnClick="editTeam_click" Text="Add Team" ID="editButton"></asp:Button>
                 </div>
             </div>
         </div>

@@ -29,6 +29,9 @@ namespace COMP229_F16_Team_Project_1 {
 
             if ((!IsPostBack) && (Request.QueryString.Count > 0)) {
 
+                errorBox.Visible = false;
+                errorBox.InnerText = "";
+
                 setTeam();
             }
         }
@@ -60,35 +63,41 @@ namespace COMP229_F16_Team_Project_1 {
             Response.Redirect("~/Default.aspx");
         }
 
-        protected void addTeam_click(object sender, EventArgs e) {
+        protected void editTeam_click(object sender, EventArgs e) {
 
-            using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection")) {
+            try {
 
-                int teamId = Convert.ToInt32(Request.QueryString["teamId"]);
+                using (GameTrackerContext db = new GameTrackerContext("GameTrackerConnection")) {
 
-                Team team = null;
+                    int teamId = Convert.ToInt32(Request.QueryString["teamId"]);
 
-                if (teamId == 0) {
-                    team = new Team();
-                    db.Teams.Add(team);
+                    Team team = null;
 
-                } else {
-                    team = (from _team in db.Teams
-                            where _team.ID == teamId
-                            select _team).FirstOrDefault();
+                    if (teamId == 0) {
+                        team = new Team();
+                        db.Teams.Add(team);
+
+                    } else {
+                        team = (from _team in db.Teams
+                                where _team.ID == teamId
+                                select _team).FirstOrDefault();
+                    }
+
+                    if (team != null) {
+
+                        team.name = name.Value;
+                        team.logoPath = logoPath.Value;
+                        team.description = description.Value;
+                    }
+
+                    // save the team
+                    db.SaveChanges();
+
+                    Response.Redirect("~/Default.aspx");
                 }
-
-                if (team != null) {
-
-                    team.name = name.Value;
-                    team.logoPath = logoPath.Value;
-                    team.description = description.Value;
-                }
-
-                // save the team
-                db.SaveChanges();
-
-                Response.Redirect("~/Default.aspx");
+            } catch (Exception ex) {
+                errorBox.Visible = true;
+                errorBox.InnerText = ex.Message;
             }
         }
     }

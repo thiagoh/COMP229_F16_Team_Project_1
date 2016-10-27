@@ -202,5 +202,10 @@ namespace COMP229_F16_Team_Project_1 {
                 }
             }
         }
+
+        protected void cancel_Click(object sender, EventArgs e) {
+            // Redirect back to the defaultpage
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }
